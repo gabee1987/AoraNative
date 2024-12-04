@@ -1,3 +1,4 @@
+// constants/icons.ts
 import bookmark from "../assets/icons/bookmark.png";
 import home from "../assets/icons/home.png";
 import plus from "../assets/icons/plus.png";
@@ -12,7 +13,8 @@ import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 
-export default {
+// Export the icons object with proper typing
+const icons = {
   play,
   bookmark,
   home,
@@ -27,3 +29,5 @@ export default {
   eyeHide,
   eye,
 };
+
+export default icons;

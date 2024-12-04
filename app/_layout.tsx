@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Slot, SplashScreen, Stack } from "expo-router";
 import "../global.css";
 import { useFonts } from "expo-font";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,9 +29,13 @@ const RootLayout = () => {
   if (!fontsLoaded && !error) return null;
 
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-    </Stack>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        {/* The scrolling only works with this, not with the Stack.Screen for some reason... */}
+        {/* <Slot /> */}
+      </Stack>
+    </GestureHandlerRootView>
   );
 };
 
